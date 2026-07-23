@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RBS SOFTWARE SOLLUTIONS | Next-Gen Software & Cyber Security Architecture</title>
+  <meta name="description" content="RBS SOFTWARE SOLLUTIONS delivers high-performance enterprise software, cyber security architecture, AI neural engines, and cloud systems." />
+  <meta name="theme-color" content="#030206" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="RBS SOFTWARE SOLLUTIONS | Next-Gen Software & Cyber Security Architecture" />
+  <meta property="og:description" content="High-performance enterprise software, cyber security architecture, AI neural engines, and cloud systems." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <script type="module" crossorigin src="./assets/index-CCqDjH30.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B5aXm4-Y.css">
+</head>
+<body class="bg-dark-950 text-gray-100 selection:bg-purple-neon selection:text-white relative">
+
+  <!-- Custom Magnetic Cursor Follower -->
+  <div id="custom-cursor" class="custom-cursor"></div>
+  <div id="custom-cursor-follower" class="custom-cursor-follower"></div>
+
+  <!-- Background Interactive Nodes Canvas -->
+  <canvas id="nodes-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- Pre-loader Screen -->
+  <div id="preloader">
+    <div class="absolute inset-0 bg-cyber-grid opacity-30 pointer-events-none"></div>
+    <div class="relative z-10 flex flex-col items-center max-w-md w-full px-6 text-center">
+      <!-- Glowing Logo Icon -->
+      <div class="w-16 h-16 mb-6 rounded-2xl bg-purple-glow/20 border border-purple-neon flex items-center justify-center shadow-purple-glow animate-pulse">
+        <span class="text-2xl font-extrabold text-purple-bright tracking-wider">RBS</span>
+      </div>
+
+      <!-- Encrypted Decoding Logo Title -->
+      <h2 id="loader-logo-text" class="text-xl md:text-2xl font-mono font-bold tracking-widest text-white mb-2 h-8">
+        RBS SOFTWARE SOLLUTIONS
+      </h2>
+      <p id="loader-text" class="text-xs font-mono text-purple-bright/80 tracking-wider uppercase mb-8 h-4">
+        INITIALIZING CORE SYSTEM...
+      </p>
+
+      <!-- Progress Counter & Bar -->
+      <div class="w-full bg-dark-800 h-1.5 rounded-full overflow-hidden border border-purple-500/20 mb-3">
+        <div id="loader-bar-inner" class="bg-gradient-to-r from-purple-glow via-purple-neon to-cyber-cyan h-full w-0 shadow-purple-glow transition-all duration-100"></div>
+      </div>
+      <div id="loader-counter" class="text-right w-full text-xs font-mono text-gray-400">000%</div>
+    </div>
+  </div>
+
+  <!-- Glassmorphic Header Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3.5 flex items-center justify-between border border-purple-500/20 shadow-cyber-card">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-purple-glow/20 border border-purple-neon/50 flex items-center justify-center shadow-purple-glow group-hover:scale-105 transition-transform">
+          <span class="font-black text-lg text-white">RBS</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-sm md:text-base tracking-wider text-white group-hover:text-purple-bright transition-colors">RBS SOFTWARE</span>
+          <span class="text-[10px] font-mono text-purple-neon tracking-widest uppercase">SOLLUTIONS</span>
+        </div>
+      </a>
+
+      <!-- System Status Pill -->
+      <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-dark-900/80 border border-purple-500/20 text-xs font-mono">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="text-emerald-400 font-semibold">SYSTEMS ONLINE</span>
+        <span class="text-gray-500">|</span>
+        <span class="text-gray-400">LATENCY 12ms</span>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <a href="#services-section" class="hover:text-purple-bright transition-colors relative group py-1">
+          Capabilities
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-neon group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="#terminal-section" class="hover:text-purple-bright transition-colors relative group py-1">
+          Security Terminal
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-neon group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="#calculator-section" class="hover:text-purple-bright transition-colors relative group py-1">
+          Scope Estimator
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-neon group-hover:w-full transition-all duration-300"></span>
+        </a>
+      </div>
+
+      <!-- Magnetic Header CTA Button -->
+      <button class="open-contact-modal magnetic-btn px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-glow to-purple-neon text-white text-xs md:text-sm font-semibold shadow-purple-glow hover:shadow-purple-heavy transition-all flex items-center gap-2 group">
+        <span>Start a Project</span>
+        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main class="relative z-10">
+
+    <!-- HERO SECTION -->
+    <section id="hero-section" class="min-h-screen pt-32 pb-20 px-4 md:px-8 flex flex-col justify-center relative overflow-hidden bg-cyber-grid">
+      
+      <!-- Ambient Glow Spotlights -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-glow/15 rounded-full blur-[140px] pointer-events-none"></div>
+      <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-cyber-cyan/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text Column -->
+        <div class="lg:col-span-7 flex flex-col z-10">
+          
+          <!-- Cyber Badge -->
+          <div id="hero-badges" class="opacity-0 translate-y-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-bright text-xs font-mono uppercase tracking-widest w-fit mb-6 shadow-purple-glow">
+            <i data-lucide="shield" class="w-3.5 h-3.5 text-purple-bright"></i>
+            <span>CYBER-GRADE SOFTWARE ARCHITECTURE</span>
+          </div>
+
+          <!-- Massive Bold GSAP Letter Typography -->
+          <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.08] mb-6">
+            <span class="block">
+              <span class="char-wrapper"><span class="char-inner hero-letter">E</span></span><span class="char-wrapper"><span class="char-inner hero-letter">n</span></span><span class="char-wrapper"><span class="char-inner hero-letter">g</span></span><span class="char-wrapper"><span class="char-inner hero-letter">i</span></span><span class="char-wrapper"><span class="char-inner hero-letter">n</span></span><span class="char-wrapper"><span class="char-inner hero-letter">e</span></span><span class="char-wrapper"><span class="char-inner hero-letter">e</span></span><span class="char-wrapper"><span class="char-inner hero-letter">r</span></span><span class="char-wrapper"><span class="char-inner hero-letter">i</span></span><span class="char-wrapper"><span class="char-inner hero-letter">n</span></span><span class="char-wrapper"><span class="char-inner hero-letter">g</span></span>
+            </span>
+            <span class="block text-gradient-purple">
+              <span class="char-wrapper"><span class="char-inner hero-letter">N</span></span><span class="char-wrapper"><span class="char-inner hero-letter">e</span></span><span class="char-wrapper"><span class="char-inner hero-letter">x</span></span><span class="char-wrapper"><span class="char-inner hero-letter">t</span></span><span class="char-wrapper"><span class="char-inner hero-letter">-</span></span><span class="char-wrapper"><span class="char-inner hero-letter">G</span></span><span class="char-wrapper"><span class="char-inner hero-letter">e</span></span><span class="char-wrapper"><span class="char-inner hero-letter">n</span></span>
+            </span>
+            <span class="block text-gray-100">
+              <span class="char-wrapper"><span class="char-inner hero-letter">S</span></span><span class="char-wrapper"><span class="char-inner hero-letter">o</span></span><span class="char-wrapper"><span class="char-inner hero-letter">f</span></span><span class="char-wrapper"><span class="char-inner hero-letter">t</span></span><span class="char-wrapper"><span class="char-inner hero-letter">w</span></span><span class="char-wrapper"><span class="char-inner hero-letter">a</span></span><span class="char-wrapper"><span class="char-inner hero-letter">r</span></span><span class="char-wrapper"><span class="char-inner hero-letter">e</span></span>
+            </span>
+          </h1>
+
+          <!-- Hero Subtitle -->
+          <p id="hero-subtext" class="opacity-0 translate-y-4 text-base md:text-xl text-gray-400 font-normal max-w-2xl leading-relaxed mb-10">
+            We architect high-concurrency cloud systems, zero-trust cybersecurity frameworks, and intelligent AI engines engineered for mission-critical scale.
+          </p>
+
+          <!-- Action CTA Group with Magnetic Physics -->
+          <div id="hero-cta-group" class="opacity-0 translate-y-4 flex flex-wrap items-center gap-4">
+            <button class="open-contact-modal magnetic-btn px-8 py-4 rounded-xl bg-gradient-to-r from-purple-glow via-purple-neon to-cyber-accent text-white font-semibold text-base shadow-purple-glow hover:shadow-purple-heavy transition-all flex items-center gap-3 group">
+              <span>Launch Your Infrastructure</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1.5 transition-transform"></i>
+            </button>
+
+            <a href="#services-section" class="magnetic-btn px-8 py-4 rounded-xl glass-panel text-gray-200 font-semibold text-base border border-purple-500/30 hover:border-purple-bright hover:text-white transition-all flex items-center gap-2">
+              <i data-lucide="cpu" class="w-5 h-5 text-purple-bright"></i>
+              <span>Explore Capabilities</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- 3D SPLINE CONTAINER COLUMN -->
+        <div class="lg:col-span-5 relative h-[420px] sm:h-[500px] lg:h-[600px] w-full flex items-center justify-center">
+          
+          <!-- Glowing Container Backdrop Ring -->
+          <div class="absolute inset-0 rounded-3xl bg-gradient-to-b from-purple-glow/20 via-transparent to-purple-dark/30 p-[1px] shadow-cyber-card">
+            
+            <!--
+              =====================================================================
+              SPLINE 3D WEBGL EMBED CONTAINER (RESPONSIVE)
+              =====================================================================
+              YOU CAN DROP YOUR SPLINE IFRAME OR SPLINE CODE SNIPPET INSIDE THIS DIV.
+              Example 1 (Spline Web Component):
+                <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.0/build/spline-viewer.js"></script>
+                <spline-viewer url="https://prod.spline.design/YOUR_SPLINE_FILE/scene.splinecode"></spline-viewer>
+
+              Example 2 (Spline iFrame):
+                <iframe src="https://my.spline.design/YOUR_SCENE_ID/" frameborder="0" width="100%" height="100%"></iframe>
+              =====================================================================
+            -->
+            <div id="spline-container" class="relative w-full h-full rounded-3xl overflow-hidden glass-panel flex items-center justify-center">
+              
+              <!-- Built-in 3D Fallback Canvas (Active until Spline URL is pasted) -->
+              <canvas id="spline-fallback-canvas" class="w-full h-full block cursor-grab active:cursor-grabbing"></canvas>
+
+              <!-- Watermark Overlay Badge -->
+              <div class="absolute bottom-4 left-4 px-3 py-1.5 rounded-lg bg-dark-950/80 backdrop-blur-md border border-purple-500/20 text-[11px] font-mono text-purple-bright flex items-center gap-2 pointer-events-none">
+                <span class="w-2 h-2 rounded-full bg-purple-neon animate-pulse"></span>
+                <span>INTERACTIVE 3D WEBGL CANVAS</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- KEY METRICS TICKER MATRIX -->
+      <div class="max-w-7xl mx-auto w-full mt-20 pt-10 border-t border-purple-500/15 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="flex flex-col">
+          <div class="text-3xl sm:text-4xl font-extrabold font-mono text-white flex items-center">
+            <span class="counter-val" data-target="99.99" data-suffix="%">0%</span>
+          </div>
+          <span class="text-xs font-mono text-gray-400 uppercase tracking-widest mt-1">Uptime SLA Guarantee</span>
+        </div>
+
+        <div class="flex flex-col">
+          <div class="text-3xl sm:text-4xl font-extrabold font-mono text-purple-bright flex items-center">
+            <span class="counter-val" data-target="500" data-suffix="M+">0</span>
+          </div>
+          <span class="text-xs font-mono text-gray-400 uppercase tracking-widest mt-1">Transactions Processed</span>
+        </div>
+
+        <div class="flex flex-col">
+          <div class="text-3xl sm:text-4xl font-extrabold font-mono text-white flex items-center">
+            <span class="counter-val" data-target="10" data-suffix="ms">&lt;0</span>
+          </div>
+          <span class="text-xs font-mono text-gray-400 uppercase tracking-widest mt-1">Edge Processing Speed</span>
+        </div>
+
+        <div class="flex flex-col">
+          <div class="text-3xl sm:text-4xl font-extrabold font-mono text-purple-bright flex items-center">
+            <span class="counter-val" data-target="0" data-suffix=" Incidents">0</span>
+          </div>
+          <span class="text-xs font-mono text-gray-400 uppercase tracking-widest mt-1">Security Vulnerability Record</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SERVICES SECTION ("CORE CAPABILITIES") -->
+    <section id="services-section" class="py-28 px-4 md:px-8 relative bg-dark-900/60">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Section Header -->
+        <div class="scroll-reveal text-center max-w-3xl mx-auto mb-20">
+          <span class="text-xs font-mono text-purple-bright uppercase tracking-widest bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">
+            ENGINEERING EXCELLENCE
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-6">
+            Cyber-Grade Software <span class="text-gradient-purple">Capabilities</span>
+          </h2>
+          <p class="text-gray-400 text-base md:text-lg">
+            Hover over each solution to experience our glowing 3D-tilt physics and explore our high-reliability architecture modules.
+          </p>
+        </div>
+
+        <!-- Services Grid with Glowing Tracing Border Effect & 3D Tilt -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1: Enterprise Cloud Systems -->
+          <div class="service-card-item glowing-border-card p-8 group">
+            <div class="w-14 h-14 rounded-2xl bg-purple-glow/20 border border-purple-neon/40 flex items-center justify-center mb-6 shadow-purple-glow group-hover:scale-110 transition-transform">
+              <i data-lucide="server" class="w-7 h-7 text-purple-bright"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-bright transition-colors">
+              Enterprise Distributed Cloud
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              High-concurrency microservices, auto-scaling Kubernetes clusters, and ultra-low latency distributed cloud architecture built for resilience.
+            </p>
+            <ul class="space-y-2 font-mono text-xs text-gray-300">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-neon"></i> Auto-Scaling Cluster Management</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-neon"></i> Multi-Region Zero-Downtime</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Cyber Security Architecture -->
+          <div class="service-card-item glowing-border-card p-8 group">
+            <div class="w-14 h-14 rounded-2xl bg-purple-glow/20 border border-purple-neon/40 flex items-center justify-center mb-6 shadow-purple-glow group-hover:scale-110 transition-transform">
+              <i data-lucide="lock" class="w-7 h-7 text-purple-bright"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-bright transition-colors">
+              Zero-Trust Cyber Shield
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Quantum-resistant encryption layers, automated threat mitigation pipelines, and continuous vulnerability scanning logic.
+            </p>
+            <ul class="space-y-2 font-mono text-xs text-gray-300">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-neon"></i> End-to-End AES-256 GCM</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-neon"></i> Automated Penetration Audits</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Neural AI Engines -->
+          <div class="service-card-item glowing-border-card p-8 group">
+            <div class="w-14 h-14 rounded-2xl bg-purple-glow/20 border border-purple-neon/40 flex items-center justify-center mb-6 shadow-purple-glow group-hover:scale-110 transition-transform">
+              <i data-lucide="cpu" class="w-7 h-7 text-purple-bright"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-bright transition-colors">
+              Autonomous AI Matrix
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Custom LLM integration, predictive neural analytics, and real-time streaming data inference pipelines tailored for enterprise automation.
+            </p>
+            <ul class="space-y-2 font-mono text-xs text-gray-300">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-neon"></i> Real-time Model Fine-Tuning</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-neon"></i> Sub-millisecond Neural Inference</li>
+            </ul>
+          </div>
+
+          <!-- Card 4: Fintech Infrastructure -->
+          <div class="service-card-item glowing-border-card p-8 group">
+            <div class="w-14 h-14 rounded-2xl bg-purple-glow/20 border border-purple-neon/40 flex items-center justify-center mb-6 shadow-purple-glow group-hover:scale-110 transition-transform">
+              <i data-lucide="zap" class="w-7 h-7 text-purple-bright"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-bright transition-colors">
+              Fintech Platform Systems
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              ACID-compliant transaction engines, distributed ledgers, and automated payment routing gateways engineered for zero transaction loss.
+            </p>
+            <ul class="space-y-2 font-mono text-xs text-gray-300">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-neon"></i> High TPS Ledger Engine</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-neon"></i> Fraud Detection Algorithms</li>
+            </ul>
+          </div>
+
+          <!-- Card 5: High-Performance Web Applications -->
+          <div class="service-card-item glowing-border-card p-8 group">
+            <div class="w-14 h-14 rounded-2xl bg-purple-glow/20 border border-purple-neon/40 flex items-center justify-center mb-6 shadow-purple-glow group-hover:scale-110 transition-transform">
+              <i data-lucide="globe" class="w-7 h-7 text-purple-bright"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-bright transition-colors">
+              Ultra-Interactive Web Apps
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              WebGL 3D web applications, micro-frontend architecture, and custom design systems crafted to captivate enterprise clients.
+            </p>
+            <ul class="space-y-2 font-mono text-xs text-gray-300">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-neon"></i> 60FPS GSAP Motion Systems</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-neon"></i> Complete Static Edge CDN Ready</li>
+            </ul>
+          </div>
+
+          <!-- Card 6: Custom SaaS Engineering -->
+          <div class="service-card-item glowing-border-card p-8 group">
+            <div class="w-14 h-14 rounded-2xl bg-purple-glow/20 border border-purple-neon/40 flex items-center justify-center mb-6 shadow-purple-glow group-hover:scale-110 transition-transform">
+              <i data-lucide="code" class="w-7 h-7 text-purple-bright"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-bright transition-colors">
+              Full-Lifecycle SaaS Platform
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              From product discovery and API design to DevOps automation, database tuning, and production launch monitoring.
+            </p>
+            <ul class="space-y-2 font-mono text-xs text-gray-300">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-neon"></i> CI/CD Pipeline Automation</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-neon"></i> Multi-Tenant Database Isolation</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTERACTIVE SECURITY TERMINAL & TECH STACK SHOWCASE -->
+    <section id="terminal-section" class="py-28 px-4 md:px-8 relative bg-cyber-grid">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Explanatory Text -->
+        <div class="lg:col-span-5 scroll-reveal">
+          <span class="text-xs font-mono text-purple-bright uppercase tracking-widest bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">
+            TRANSPARENT REPOSITORY LOGS
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-6 leading-tight">
+            Inspect Our Real-Time <span class="text-gradient-purple">Security Matrix</span>
+          </h2>
+          <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-8">
+            Experience our zero-trust handshake protocols and autonomous AI threat defense logic executing in real-time. Switch tabs to observe live system telemetry.
+          </p>
+
+          <div class="space-y-4 font-mono text-xs text-gray-300">
+            <div class="flex items-center gap-3 p-3 rounded-xl glass-panel border border-purple-500/20">
+              <div class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></div>
+              <span>Status: Active Multi-Region Handshake</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-xl glass-panel border border-purple-500/20">
+              <div class="w-3 h-3 rounded-full bg-purple-bright animate-pulse"></div>
+              <span>Encryption: Quantum-Safe Lattice Keys</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Terminal Window UI Card -->
+        <div class="lg:col-span-7">
+          <div class="glass-panel-glow rounded-2xl overflow-hidden border border-purple-500/30 shadow-purple-heavy">
+            
+            <!-- Terminal Header Bar -->
+            <div class="px-6 py-4 bg-dark-900 border-b border-purple-500/20 flex items-center justify-between">
+              <!-- Window control dots -->
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                <span class="ml-3 text-xs font-mono text-gray-400">rbs-cyber-console ~ v4.2.0</span>
+              </div>
+
+              <!-- Terminal Tabs -->
+              <div class="flex items-center gap-2">
+                <button data-tab="security" class="terminal-tab px-3 py-1 rounded-lg text-xs font-mono border border-purple-neon bg-purple-deep/40 text-white transition-all">
+                  Security Log
+                </button>
+                <button data-tab="ai" class="terminal-tab px-3 py-1 rounded-lg text-xs font-mono border border-transparent text-gray-400 hover:text-white transition-all">
+                  AI Matrix
+                </button>
+                <button data-tab="cloud" class="terminal-tab px-3 py-1 rounded-lg text-xs font-mono border border-transparent text-gray-400 hover:text-white transition-all">
+                  Cluster.yml
+                </button>
+              </div>
+            </div>
+
+            <!-- Terminal Code Body -->
+            <div class="p-6 font-mono text-xs sm:text-sm text-purple-bright bg-dark-950/90 min-h-[260px] overflow-x-auto leading-relaxed">
+              <pre><code id="terminal-code-body" class="text-gray-200">Loading terminal log stream...</code></pre>
+            </div>
+
+            <!-- Terminal Footer Status Bar -->
+            <div class="px-6 py-2.5 bg-dark-900 border-t border-purple-500/20 flex items-center justify-between text-[11px] font-mono text-gray-400">
+              <span>UTF-8 // SHA-256 VERIFIED</span>
+              <span class="text-purple-bright">● LIVE CONNECTION</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SOLUTION SCOPE ESTIMATOR & CALCULATOR SECTION -->
+    <section id="calculator-section" class="py-28 px-4 md:px-8 relative bg-dark-900/60">
+      <div class="max-w-5xl mx-auto glass-panel p-8 md:p-12 rounded-3xl border border-purple-500/30 shadow-purple-glow">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-mono text-purple-bright uppercase tracking-widest bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">
+            TRANSPARENT ESTIMATOR
+          </span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-4 mb-4">
+            Interactive Solution <span class="text-gradient-purple">Scope Configurator</span>
+          </h2>
+          <p class="text-gray-400 text-sm">
+            Adjust the sliders below to estimate the resource scope, timeline, and deployment footprint for your software solution.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Sliders Form -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <div>
+              <div class="flex justify-between text-xs font-mono text-gray-300 mb-2">
+                <span>Infrastructure Scale (Microservices)</span>
+                <span class="text-purple-bright">Tier Multiplier</span>
+              </div>
+              <input type="range" min="1" max="10" value="3" data-multiplier="1.5" class="scope-slider w-full accent-purple-neon cursor-pointer bg-dark-800 rounded-lg h-2" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-mono text-gray-300 mb-2">
+                <span>Cyber Security Audit Level</span>
+                <span class="text-purple-bright">Zero-Trust Modules</span>
+              </div>
+              <input type="range" min="1" max="5" value="2" data-multiplier="2.0" class="scope-slider w-full accent-purple-neon cursor-pointer bg-dark-800 rounded-lg h-2" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-mono text-gray-300 mb-2">
+                <span>Custom AI & Analytics Integration</span>
+                <span class="text-purple-bright">Inference Nodes</span>
+              </div>
+              <input type="range" min="0" max="8" value="2" data-multiplier="2.5" class="scope-slider w-full accent-purple-neon cursor-pointer bg-dark-800 rounded-lg h-2" />
+            </div>
+
+          </div>
+
+          <!-- Dynamic Output Card -->
+          <div class="lg:col-span-5 glass-panel p-6 rounded-2xl border border-purple-bright/40 text-center flex flex-col items-center justify-center">
+            <span class="text-xs font-mono text-gray-400 uppercase tracking-widest mb-1">Estimated Investment</span>
+            <div id="calc-estimated-cost" class="text-4xl font-extrabold font-mono text-gradient-purple mb-2">
+              $37,500
+            </div>
+            <span class="text-xs font-mono text-gray-400 uppercase tracking-widest mb-6">Target Timeline</span>
+            <div id="calc-estimated-time" class="text-2xl font-bold font-mono text-white mb-6">
+              7 Weeks
+            </div>
+
+            <button class="open-contact-modal w-full magnetic-btn py-3 rounded-xl bg-purple-glow hover:bg-purple-neon text-white font-semibold text-sm transition-all shadow-purple-glow">
+              Reserve Sprint Architecture Slot
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HIGH-IMPACT CALL TO ACTION -->
+    <section class="py-24 px-4 md:px-8 relative overflow-hidden">
+      <div class="max-w-5xl mx-auto glass-panel-glow p-12 md:p-16 rounded-3xl border border-purple-neon/50 text-center relative z-10 shadow-purple-heavy">
+        <div class="w-16 h-16 rounded-2xl bg-purple-glow/30 border border-purple-neon flex items-center justify-center mx-auto mb-6 shadow-purple-glow">
+          <i data-lucide="sparkles" class="w-8 h-8 text-purple-bright"></i>
+        </div>
+
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">
+          Ready to Build Your <span class="text-gradient-purple">Tech Powerhouse?</span>
+        </h2>
+        <p class="text-gray-300 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+          Partner with RBS SOFTWARE SOLLUTIONS to design, build, and deploy cyber-grade software engineered to out-perform industry standards.
+        </p>
+
+        <button class="open-contact-modal magnetic-btn px-10 py-5 rounded-2xl bg-gradient-to-r from-purple-glow via-purple-neon to-cyber-accent text-white font-extrabold text-lg shadow-purple-heavy hover:scale-105 transition-all inline-flex items-center gap-3">
+          <span>Schedule Architecture Consultation</span>
+          <i data-lucide="arrow-right" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FUTURISTIC FOOTER -->
+  <footer class="border-t border-purple-500/20 bg-dark-950 py-16 px-4 md:px-8 relative z-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      
+      <!-- Col 1: Brand Info -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-purple-glow/30 border border-purple-neon flex items-center justify-center">
+            <span class="font-bold text-white text-sm">RBS</span>
+          </div>
+          <span class="font-bold text-base text-white tracking-wider">RBS SOFTWARE</span>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed">
+          High-performance software engineering, cyber security architecture, AI neural engines, and cloud solutions.
+        </p>
+        <div class="text-[11px] font-mono text-purple-bright">
+          &copy; 2026 RBS SOFTWARE SOLLUTIONS. All Rights Reserved.
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation -->
+      <div>
+        <h4 class="text-xs font-mono text-purple-bright uppercase tracking-widest mb-4">Architecture</h4>
+        <ul class="space-y-2 text-xs text-gray-400">
+          <li><a href="#services-section" class="hover:text-white transition-colors">Distributed Cloud</a></li>
+          <li><a href="#services-section" class="hover:text-white transition-colors">Zero-Trust Cybersecurity</a></li>
+          <li><a href="#services-section" class="hover:text-white transition-colors">Autonomous AI Engines</a></li>
+          <li><a href="#services-section" class="hover:text-white transition-colors">Fintech Platforms</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Quick Links -->
+      <div>
+        <h4 class="text-xs font-mono text-purple-bright uppercase tracking-widest mb-4">Company</h4>
+        <ul class="space-y-2 text-xs text-gray-400">
+          <li><a href="#terminal-section" class="hover:text-white transition-colors">Security Log Console</a></li>
+          <li><a href="#calculator-section" class="hover:text-white transition-colors">Scope Estimator</a></li>
+          <li><a href="#" class="open-contact-modal hover:text-white transition-colors">Contact Architecture Team</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Cyber Status -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-mono text-purple-bright uppercase tracking-widest mb-4">System Telemetry</h4>
+        <div class="p-3 rounded-xl glass-panel border border-purple-500/20 text-xs font-mono space-y-1">
+          <div class="flex justify-between text-gray-400">
+            <span>NETWORK STATE:</span>
+            <span class="text-emerald-400 font-bold">OPTIMAL</span>
+          </div>
+          <div class="flex justify-between text-gray-400">
+            <span>ENCRYPTION:</span>
+            <span class="text-purple-bright">AES-256</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- CONTACT MODAL DIALOG -->
+  <div id="contact-modal" class="fixed inset-0 z-[10000] hidden items-center justify-center p-4 bg-dark-950/80 backdrop-blur-xl">
+    <div id="modal-content" class="max-w-lg w-full glass-panel-glow p-8 rounded-3xl border border-purple-neon shadow-purple-heavy relative">
+      
+      <button class="close-contact-modal absolute top-6 right-6 text-gray-400 hover:text-white transition-colors">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="mb-6">
+        <span class="text-xs font-mono text-purple-bright uppercase tracking-widest">TRANSMIT ENCRYPTED INQUIRY</span>
+        <h3 class="text-2xl font-bold text-white mt-1">Start a Project with RBS</h3>
+      </div>
+
+      <form id="contact-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-mono text-gray-300 mb-1">YOUR NAME / ENTITY</label>
+          <input type="text" required placeholder="Alex Mercer" class="w-full px-4 py-3 rounded-xl bg-dark-900 border border-purple-500/30 text-white text-sm focus:border-purple-bright focus:outline-none" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono text-gray-300 mb-1">CORRESPONDENCE EMAIL</label>
+          <input type="email" required placeholder="alex@techcorp.io" class="w-full px-4 py-3 rounded-xl bg-dark-900 border border-purple-500/30 text-white text-sm focus:border-purple-bright focus:outline-none" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono text-gray-300 mb-1">PROJECT ARCHITECTURE SCOPE</label>
+          <textarea rows="3" required placeholder="Describe your software, cloud, or cybersecurity requirements..." class="w-full px-4 py-3 rounded-xl bg-dark-900 border border-purple-500/30 text-white text-sm focus:border-purple-bright focus:outline-none resize-none"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-purple-glow to-purple-neon text-white font-bold text-sm shadow-purple-glow hover:shadow-purple-heavy transition-all flex items-center justify-center gap-2">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Send Transmission</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Vite Main JS Module Script -->
+</body>
+</html>
