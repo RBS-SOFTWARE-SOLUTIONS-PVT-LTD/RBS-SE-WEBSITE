@@ -40,10 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 1. Initialize Lenis Smooth Scrolling
   const lenis = new Lenis({
-    duration: 1.2,
+    duration: 1.0,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
-    wheelMultiplier: 1,
+    wheelMultiplier: 0.9,
+    touchMultiplier: 1.5,
   });
 
   lenis.on('scroll', ScrollTrigger.update);
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lenis.raf(time * 1000);
   });
 
-  gsap.ticker.lagSmoothing(0);
+  gsap.ticker.lagSmoothing(500, 33);
 
   // 2. Initialize Interactive Background Canvas & Cursor
   initNodesCanvas();

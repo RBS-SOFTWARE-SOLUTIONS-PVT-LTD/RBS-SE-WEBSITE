@@ -29,15 +29,16 @@ export function initSplineContainer() {
 
 // 3D Wireframe Torus & Cyber Sphere Fallback Visual
 function initFallback3DCanvas(canvas) {
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d', { alpha: true });
   let width, height;
 
   function resize() {
+    if (!canvas.parentElement) return;
     width = canvas.width = canvas.parentElement.clientWidth;
     height = canvas.height = canvas.parentElement.clientHeight;
   }
   resize();
-  window.addEventListener('resize', resize);
+  window.addEventListener('resize', resize, { passive: true });
 
   let rotationX = 0;
   let rotationY = 0;
@@ -57,13 +58,13 @@ function initFallback3DCanvas(canvas) {
       targetRotationY = mouseX * 1.5;
       targetRotationX = -mouseY * 1.5;
     }
-  });
+  }, { passive: true });
 
   // Generate 3D Torus Vertices
-  const R = Math.min(width, height) * 0.28; // Major radius
+  const R = Math.min(width || 400, height || 400) * 0.28; // Major radius
   const r = R * 0.45; // Minor radius
-  const numR = 24;
-  const numr = 16;
+  const numR = 20;
+  const numr = 14;
   const points = [];
 
   for (let i = 0; i < numR; i++) {
@@ -78,9 +79,9 @@ function initFallback3DCanvas(canvas) {
   }
 
   // Floating Cyber Particles around 3D Torus
-  const particles = Array.from({ length: 60 }, () => ({
-    x: (Math.random() - 0.5) * width * 0.8,
-    y: (Math.random() - 0.5) * height * 0.8,
+  const particles = Array.from({ length: 45 }, () => ({
+    x: (Math.random() - 0.5) * (width || 400) * 0.8,
+    y: (Math.random() - 0.5) * (height || 400) * 0.8,
     z: (Math.random() - 0.5) * 300,
     size: Math.random() * 2 + 1,
     speed: Math.random() * 0.02 + 0.005,
@@ -88,22 +89,18 @@ function initFallback3DCanvas(canvas) {
   }));
 
   function project(p, rx, ry, rz) {
-    // Rotation X
     let y1 = p.y * Math.cos(rx) - p.z * Math.sin(rx);
     let z1 = p.y * Math.sin(rx) + p.z * Math.cos(rx);
     let x1 = p.x;
 
-    // Rotation Y
     let x2 = x1 * Math.cos(ry) + z1 * Math.sin(ry);
     let z2 = -x1 * Math.sin(ry) + z1 * Math.cos(ry);
     let y2 = y1;
 
-    // Rotation Z
     let x3 = x2 * Math.cos(rz) - y2 * Math.sin(rz);
     let y3 = x2 * Math.sin(rz) + y2 * Math.cos(rz);
     let z3 = z2;
 
-    // Perspective projection
     const fov = 450;
     const scale = fov / (fov + z3 + 250);
     const projX = x3 * scale + width / 2;
@@ -112,7 +109,24 @@ function initFallback3DCanvas(canvas) {
     return { x: projX, y: projY, scale, z: z3 };
   }
 
+  let animFrameId = null;
+  let isVisible = true;
+
+  const observer = new IntersectionObserver((entries) => {
+    isVisible = entries[0].isIntersecting;
+    if (isVisible && !animFrameId) {
+      draw();
+    }
+  }, { threshold: 0.05 });
+
+  observer.observe(canvas);
+
   function draw() {
+    if (!isVisible) {
+      animFrameId = null;
+      return;
+    }
+
     ctx.clearRect(0, 0, width, height);
 
     // Smooth rotational lerp
@@ -122,13 +136,13 @@ function initFallback3DCanvas(canvas) {
 
     // Draw glowing center aura
     const gradient = ctx.createRadialGradient(width / 2, height / 2, 10, width / 2, height / 2, Math.min(width, height) * 0.45);
-    gradient.addColorStop(0, 'rgba(168, 85, 247, 0.25)');
-    gradient.addColorStop(0.5, 'rgba(147, 51, 234, 0.08)');
+    gradient.addColorStop(0, 'rgba(168, 85, 247, 0.22)');
+    gradient.addColorStop(0.5, 'rgba(147, 51, 234, 0.06)');
     gradient.addColorStop(1, 'rgba(3, 2, 6, 0)');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, width, height);
 
-    // Render 3D Floating Particles
+    // Render 3D Floating Particles (no shadowBlur)
     particles.forEach(p => {
       p.angle += p.speed;
       p.y += Math.sin(p.angle) * 0.4;
@@ -138,8 +152,6 @@ function initFallback3DCanvas(canvas) {
         ctx.beginPath();
         ctx.arc(proj.x, proj.y, p.size * proj.scale, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(232, 121, 249, ${Math.min(1, proj.scale * 0.7)})`;
-        ctx.shadowColor = '#A855F7';
-        ctx.shadowBlur = 8;
         ctx.fill();
       }
     });
@@ -148,8 +160,6 @@ function initFallback3DCanvas(canvas) {
     const projected = points.map(p => project(p, rotationX, rotationY, rotationZ));
 
     ctx.lineWidth = 1.2;
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = '#A855F7';
 
     for (let i = 0; i < numR; i++) {
       for (let j = 0; j < numr; j++) {
@@ -181,7 +191,7 @@ function initFallback3DCanvas(canvas) {
       }
     }
 
-    requestAnimationFrame(draw);
+    animFrameId = requestAnimationFrame(draw);
   }
 
   draw();
