@@ -243,3 +243,20 @@ body:hover .custom-cursor {
   box-shadow: 0 0 15px #A855F7;
   pointer-events: none;
 }
+
+/* Mobile Touch & Performance Optimizations */
+@media (max-width: 768px), (pointer: coarse) {
+  .custom-cursor, .custom-cursor-follower {
+    display: none !important;
+  }
+  
+  .glass-panel, .glass-panel-glow {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+  .glowing-border-card::before {
+    animation: none !important;
+    opacity: 0.25;
+  }
+}

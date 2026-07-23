@@ -6,6 +6,14 @@ export function initMagneticCursor() {
   
   if (!cursor || !follower) return;
 
+  // Disable custom cursor on touch screens to save performance & prevent mobile scroll lag
+  const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || window.matchMedia('(pointer: coarse)').matches;
+  if (isTouchDevice) {
+    cursor.style.display = 'none';
+    follower.style.display = 'none';
+    return;
+  }
+
   let mouseX = -100;
   let mouseY = -100;
   let followerX = -100;
@@ -17,7 +25,7 @@ export function initMagneticCursor() {
     mouseY = e.clientY;
 
     cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-  });
+  }, { passive: true });
 
   // Smooth lerp follower loop
   function render() {
@@ -48,7 +56,7 @@ export function initMagneticCursor() {
 
       el.style.transform = `translate3d(${pullX}px, ${pullY}px, 0) scale(1.03)`;
       document.body.classList.add('cursor-hover');
-    });
+    }, { passive: true });
 
     el.addEventListener('mouseleave', () => {
       el.style.transform = 'translate3d(0px, 0px, 0px) scale(1)';

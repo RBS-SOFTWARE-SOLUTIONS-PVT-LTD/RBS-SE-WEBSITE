@@ -25,20 +25,22 @@ export function initNodesCanvas() {
     mouse.y = -1000;
   }, { passive: true });
 
-  // Node particle density based on screen size (optimized count)
-  const numNodes = Math.min(60, Math.floor((width * height) / 22000));
+  // Node particle density optimized for mobile screens
+  const isMobile = width < 768;
+  const numNodes = isMobile ? 22 : Math.min(60, Math.floor((width * height) / 22000));
   const nodes = Array.from({ length: numNodes }, () => ({
     x: Math.random() * width,
     y: Math.random() * height,
-    vx: (Math.random() - 0.5) * 0.5,
-    vy: (Math.random() - 0.5) * 0.5,
+    vx: (Math.random() - 0.5) * 0.4,
+    vy: (Math.random() - 0.5) * 0.4,
     radius: Math.random() * 2 + 1.5,
     pulse: Math.random() * Math.PI * 2,
     pulseSpeed: Math.random() * 0.03 + 0.01,
   }));
 
   // Data packets traversing the node network
-  const packets = Array.from({ length: 10 }, () => ({
+  const packetCount = isMobile ? 4 : 10;
+  const packets = Array.from({ length: packetCount }, () => ({
     fromNode: Math.floor(Math.random() * nodes.length),
     toNode: Math.floor(Math.random() * nodes.length),
     progress: Math.random(),
@@ -97,7 +99,7 @@ export function initNodesCanvas() {
     ctx.clearRect(0, 0, width, height);
 
     // Draw node connection lines
-    const maxDist = 130;
+    const maxDist = isMobile ? 100 : 130;
     ctx.lineWidth = 1;
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
@@ -116,7 +118,7 @@ export function initNodesCanvas() {
       }
     }
 
-    // Draw flowing data packets (optimized without heavy shadowBlur)
+    // Draw flowing data packets
     packets.forEach(packet => {
       const n1 = nodes[packet.fromNode];
       const n2 = nodes[packet.toNode];
@@ -132,12 +134,12 @@ export function initNodesCanvas() {
 
         ctx.fillStyle = 'rgba(232, 121, 249, 0.25)';
         ctx.beginPath();
-        ctx.arc(px, py, 4.5, 0, Math.PI * 2);
+        ctx.arc(px, py, 4, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.fillStyle = '#E879F9';
         ctx.beginPath();
-        ctx.arc(px, py, 2.5, 0, Math.PI * 2);
+        ctx.arc(px, py, 2, 0, Math.PI * 2);
         ctx.fill();
       }
     });

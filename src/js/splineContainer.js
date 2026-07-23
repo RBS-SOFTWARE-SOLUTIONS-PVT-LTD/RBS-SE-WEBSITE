@@ -11,7 +11,7 @@ export function initSplineContainer() {
 
   // Add subtle parallax on scroll to the container
   gsap.to(container, {
-    y: 60,
+    y: 40,
     ease: 'none',
     scrollTrigger: {
       trigger: '#hero-section',
@@ -60,11 +60,14 @@ function initFallback3DCanvas(canvas) {
     }
   }, { passive: true });
 
+  // Mobile optimization
+  const isMobile = (window.innerWidth || 400) < 768;
+
   // Generate 3D Torus Vertices
   const R = Math.min(width || 400, height || 400) * 0.28; // Major radius
   const r = R * 0.45; // Minor radius
-  const numR = 20;
-  const numr = 14;
+  const numR = isMobile ? 12 : 20;
+  const numr = isMobile ? 8 : 14;
   const points = [];
 
   for (let i = 0; i < numR; i++) {
@@ -79,7 +82,8 @@ function initFallback3DCanvas(canvas) {
   }
 
   // Floating Cyber Particles around 3D Torus
-  const particles = Array.from({ length: 45 }, () => ({
+  const particleCount = isMobile ? 15 : 45;
+  const particles = Array.from({ length: particleCount }, () => ({
     x: (Math.random() - 0.5) * (width || 400) * 0.8,
     y: (Math.random() - 0.5) * (height || 400) * 0.8,
     z: (Math.random() - 0.5) * 300,
@@ -136,13 +140,13 @@ function initFallback3DCanvas(canvas) {
 
     // Draw glowing center aura
     const gradient = ctx.createRadialGradient(width / 2, height / 2, 10, width / 2, height / 2, Math.min(width, height) * 0.45);
-    gradient.addColorStop(0, 'rgba(168, 85, 247, 0.22)');
-    gradient.addColorStop(0.5, 'rgba(147, 51, 234, 0.06)');
+    gradient.addColorStop(0, 'rgba(168, 85, 247, 0.2)');
+    gradient.addColorStop(0.5, 'rgba(147, 51, 234, 0.05)');
     gradient.addColorStop(1, 'rgba(3, 2, 6, 0)');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, width, height);
 
-    // Render 3D Floating Particles (no shadowBlur)
+    // Render 3D Floating Particles
     particles.forEach(p => {
       p.angle += p.speed;
       p.y += Math.sin(p.angle) * 0.4;

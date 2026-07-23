@@ -38,13 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 1. Initialize Lenis Smooth Scrolling
+  // 1. Initialize Lenis Smooth Scrolling (Native 120Hz momentum on mobile, smooth wheel on desktop)
   const lenis = new Lenis({
     duration: 1.0,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
+    smoothTouch: false,
+    syncTouch: false,
     wheelMultiplier: 0.9,
-    touchMultiplier: 1.5,
   });
 
   lenis.on('scroll', ScrollTrigger.update);
